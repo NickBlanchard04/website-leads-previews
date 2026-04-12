@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>321 Cutz Tree Trimming &amp; Tree Removal | Tree Service Website Mockup</title>
+    <meta name="description" content="Auto-generated mockup for 321 Cutz Tree Trimming &amp; Tree Removal, built from lead data for tree service service positioning in Melbourne, FL." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --accent: #5f8f46;
+        --accent-soft: #d9e8c6;
+        --surface: #111412;
+        --surface-alt: #1a211d;
+        --canvas: #f6f3ed;
+        --text: #161b18;
+        --line: rgba(18, 32, 24, 0.12);
+        --heading-font: "Plus Jakarta Sans", Georgia, serif;
+        --body-font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: var(--body-font); color: var(--text); background: linear-gradient(180deg, #fbf8f2 0%, var(--canvas) 100%); }
+      a { color: inherit; }
+      p { margin: 0; line-height: 1.7; }
+      h1, h2, h3 { margin: 0; font-family: var(--heading-font); letter-spacing: -0.03em; }
+      .page { min-height: 100vh; }
+      .shell { width: min(1180px, calc(100vw - 2rem)); margin: 0 auto; }
+      .announcement-bar { background: color-mix(in srgb, var(--surface) 96%, black 4%); color: #f5efe6; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .announcement-row { display: flex; flex-wrap: wrap; gap: 0.7rem; padding: 0.75rem 0; }
+      .announcement-pill { display: inline-flex; align-items: center; padding: 0.4rem 0.75rem; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem; font-weight: 600; }
+      .header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(255,255,255,0.94); border-bottom: 2px solid var(--accent); }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+      .brand { display: flex; align-items: center; gap: 0.9rem; color: var(--text); text-decoration: none; }
+      .brand-mark { width: 3rem; height: 3rem; border-radius: 0.7rem; display: inline-flex; align-items: center; justify-content: center; background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent) 88%, white 12%) 0%, var(--accent) 48%, color-mix(in srgb, var(--surface) 82%, black 18%) 100%); font-weight: 800; letter-spacing: 0.08em; color: white; }
+      .brand-copy small, .brand-copy strong { display: block; }
+      .brand-copy small { letter-spacing: 0.14em; text-transform: uppercase; color: rgba(21,35,27,0.58); font-size: 0.72rem; }
+      .brand-copy strong { font-size: 1rem; margin-top: 0.18rem; }
+      .header-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+      .button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; padding: 0.95rem 1.2rem; border-radius: 0.55rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; border: 1px solid transparent; transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease; }
+      .button:hover { transform: translateY(-1px); }
+      .button:focus-visible, .contact-link:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 74%, white 26%); outline-offset: 3px; }
+      .button-solid { background: color-mix(in srgb, var(--accent) 90%, white 10%); color: white; }
+      .button-ghost { background: transparent; color: var(--text); border-color: rgba(21,35,27,0.18); }
+      .hero { padding: 3.5rem 0 2.75rem; background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 96%, black 4%) 0%, color-mix(in srgb, var(--surface-alt) 94%, black 6%) 100%); }
+      .hero-grid { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr); gap: 1.5rem; align-items: stretch; }
+      .hero-copy, .hero-panel { border-radius: 1rem; box-shadow: 0 26px 70px rgba(4,8,6,0.18); }
+      .hero-copy { padding: 1.9rem; color: #f6f1e8; }
+      .hero-copy p { color: rgba(246,241,232,0.82); }
+      .eyebrow { margin: 0 0 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; font-weight: 700; color: color-mix(in srgb, var(--accent) 70%, #f6f1e8 30%); }
+      h1 { font-size: clamp(2.8rem, 7vw, 5rem); line-height: 0.92; text-transform: uppercase; font-weight: 800; }
+      h2 { font-size: clamp(1.7rem, 3vw, 2.45rem); line-height: 0.98; text-transform: uppercase; font-weight: 800; }
+      h3 { font-size: 1.06rem; line-height: 1.16; text-transform: uppercase; font-weight: 800; }
+      .hero-company { margin: 0 0 0.7rem; font-size: 1rem; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #fff; }
+      .hero-lead { margin-top: 1rem; font-size: 1.02rem; max-width: 42rem; }
+      .hero-highlights { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+      .hero-highlights li { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; }
+      .hero-highlights li::before { content: ""; width: 0.75rem; height: 0.75rem; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 6px rgba(255,255,255,0.08); }
+      .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.15rem; }
+      .hero-note { margin-top: 1rem; color: rgba(246,241,232,0.62); font-size: 0.93rem; }
+      .hero-panel { padding: 1.5rem; background: rgba(255,255,255,0.98); border: 1px solid rgba(20,32,24,0.12); border-top: 6px solid var(--accent); display: flex; flex-direction: column; gap: 1rem; }
+      .hero-panel .eyebrow { color: color-mix(in srgb, var(--text) 62%, var(--accent) 38%); margin-bottom: 0; }
+      .hero-panel p { color: rgba(19,32,24,0.78); }
+      .panel-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+      .stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+      .stat-chip { padding: 0.9rem 0.95rem; border-radius: 0.8rem; background: rgba(16,32,25,0.05); border: 1px solid rgba(16,32,25,0.08); }
+      .stat-chip span, .meta-item span, .process-step span { display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+      .stat-chip strong, .meta-item strong { display: block; margin-top: 0.28rem; font-size: 0.98rem; }
+      .section { padding: 3rem 0; }
+      .section--dark { background: color-mix(in srgb, var(--surface) 94%, black 6%); color: #f6f1e8; }
+      .section--dark p, .section--dark .section-heading p:last-child, .section--dark .review-card p { color: rgba(246,241,232,0.78); }
+      .section--dark .eyebrow { color: color-mix(in srgb, var(--accent) 72%, #f6f1e8 28%); }
+      .section-heading { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(240px, 0.75fr); gap: 1.2rem; align-items: end; margin-bottom: 1.2rem; }
+      .section-heading p:last-child { color: rgba(19,32,24,0.7); }
+      .section-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+      .process-step { padding: 1.2rem; border-radius: 1.35rem; border: 1px solid color-mix(in srgb, var(--line) 85%, transparent 15%); background: rgba(255,255,255,0.82); }
+      .process-step h3 { margin-top: 0.75rem; }
+      .process-step p { margin-top: 0.5rem; color: rgba(19,32,24,0.74); }
+      .gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+      .gallery-card:first-child { grid-column: span 2; }
+      .service-card, .proof-card, .gallery-card, .faq-card { padding: 1.2rem; background: rgba(255,255,255,0.92); border: 1px solid var(--line); border-radius: 1rem; }
+      .service-card p, .proof-card p, .gallery-card p, .faq-card p { color: rgba(19,32,24,0.74); }
+      .service-card h3, .proof-card h3, .gallery-card h3, .faq-card h3 { margin-bottom: 0.6rem; }
+      .service-index, .proof-kicker { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; margin-bottom: 0.9rem; border-radius: 999px; background: rgba(16,32,25,0.06); color: color-mix(in srgb, var(--text) 60%, var(--accent) 40%); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+      .proof-card { background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(246,241,233,0.9) 100%); }
+      .placeholder { min-height: 210px; border-radius: 1.2rem; display: flex; align-items: flex-end; padding: 1rem; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 48%), linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, black 8%) 0%, color-mix(in srgb, var(--surface-alt) 92%, black 8%) 100%); color: rgba(246,241,232,0.94); margin-bottom: 1rem; }
+      .placeholder--gallery { min-height: 240px; }
+      .review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .review-card { padding: 1.35rem; border-radius: 1rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); }
+      .review-source { margin-bottom: 0.7rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--accent) 72%, #f6f1e8 28%); }
+      .tag-list, .contact-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
+      .tag-list span { padding: 0.42rem 0.74rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: rgba(16,32,25,0.06); }
+      .contact-link { text-decoration: none; padding: 0.75rem 0.92rem; border-radius: 999px; background: rgba(16,32,25,0.06); border: 1px solid rgba(16,32,25,0.08); }
+      .contact-link--muted { background: rgba(16,32,25,0.035); }
+      .final-cta { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr); gap: 1rem; padding: 1.45rem; border-radius: 1rem; background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 96%, black 4%) 0%, color-mix(in srgb, var(--surface-alt) 94%, black 6%) 100%); color: #f6f1e8; box-shadow: 0 24px 60px rgba(4,8,6,0.2); }
+      .final-cta p { color: rgba(246,241,232,0.78); }
+      .final-cta .eyebrow { color: color-mix(in srgb, var(--accent) 72%, #f6f1e8 28%); }
+      .final-panel { padding: 1.2rem; border-radius: 1.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); }
+      .final-panel .contact-link { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.12); color: #f6f1e8; }
+      .final-panel .contact-link--muted { background: rgba(255,255,255,0.05); }
+      .meta-list { display: grid; gap: 0.85rem; margin-top: 1rem; }
+      .meta-item span { color: color-mix(in srgb, var(--text) 64%, var(--accent) 36%); }
+      .final-panel .meta-item span { color: rgba(246,241,232,0.68); }
+      .final-panel .meta-item strong { color: #f6f1e8; }
+      .footer-note { margin-top: 1.1rem; font-size: 0.92rem; color: rgba(19,32,24,0.62); }
+      @media (max-width: 920px) { .hero-grid, .section-heading, .section-grid, .process-grid, .gallery-grid, .review-grid, .final-cta, .stat-grid { grid-template-columns: 1fr; } .gallery-card:first-child { grid-column: span 1; } }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="announcement-bar"><div class="shell announcement-row"><span class="announcement-pill">Free estimates</span><span class="announcement-pill">5 stars from 23 Google reviews</span><span class="announcement-pill">Serving Melbourne, FL</span><span class="announcement-pill">Local service company</span></div></div>
+      <header class="header">
+        <div class="shell header-inner">
+          <a class="brand" href="#top">
+            <span class="brand-mark">3C</span>
+            <span class="brand-copy"><small>Melbourne, FL</small><strong>321 Cutz Tree Trimming &amp; Tree Removal</strong></span>
+          </a>
+          <div class="header-actions"><a class="button button-solid" href="tel:3212214747">Call for a free estimate</a><a class="button button-ghost" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">Suggested website</a></div>
+        </div>
+      </header>
+      <main>
+        <section class="hero" id="top">
+          <div class="shell hero-grid">
+            <article class="hero-copy" aria-labelledby="hero-title">
+              <p class="eyebrow">Melbourne, FL | Tree Service</p>
+              <p class="hero-company">321 Cutz Tree Trimming &amp; Tree Removal</p>
+              <h1 id="hero-title">Tree removal, trimming, and stump work done right.</h1>
+              <p class="hero-lead">321 Cutz Tree Trimming &amp; Tree Removal helps homeowners and property owners around Melbourne, FL with tree service work, clear communication, and fast estimate follow-up. No website listed in Google Places.</p>
+              <ul class="hero-highlights"><li>321 Cutz Tree Trimming &amp; Tree Removal in Melbourne, FL</li><li>Serving Melbourne, FL</li><li>5 stars from 23 Google reviews</li><li>Fast estimate available</li></ul>
+              <div class="hero-actions"><a class="button button-solid" href="tel:3212214747">Call for a free estimate</a><a class="button button-ghost" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">Suggested website</a></div>
+              <p class="hero-note">Call, text, or message for a fast estimate and keep the strongest contact path visible all the way down the page.</p>
+            </article>
+            <aside class="hero-panel" aria-label="Estimate details">
+              <p class="eyebrow">Fast estimate</p>
+              <h2>Call or message for a fast estimate.</h2>
+              <p>Put the phone number, review proof, and best contact path right in the first screen so visitors from Melbourne, FL know exactly how to reach out.</p>
+              <div class="panel-actions"><a class="button button-solid" href="tel:3212214747">Call for a free estimate</a><a class="button button-ghost" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">Suggested website</a></div>
+              <div class="stat-grid">
+        <div class="stat-chip">
+          <span>Service area</span>
+          <strong>Melbourne, FL</strong>
+        </div>
+        
+        <div class="stat-chip">
+          <span>Review proof</span>
+          <strong>5 stars from 23 Google reviews</strong>
+        </div>
+        
+        <div class="stat-chip">
+          <span>Best next step</span>
+          <strong>Call now or request a fast estimate</strong>
+        </div>
+        </div>
+              <div class="meta-list"><div class="meta-item"><span>Call</span><strong>(321) 221-4747</strong></div><div class="meta-item"><span>Service area</span><strong>Melbourne, FL</strong></div><div class="meta-item"><span>Review proof</span><strong>5 stars from 23 Google reviews</strong></div></div>
+              <div class="contact-links"><a class="contact-link" href="tel:3212214747">(321) 221-4747</a><a class="contact-link" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">321cutztreetree.com</a><a class="contact-link" href="https://maps.google.com/?cid=14233159851984450491&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noreferrer">Google Maps listing</a></div>
+              <div class="contact-links"><a class="contact-link contact-link--muted" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">Suggested website</a></div>
+            </aside>
+          </div>
+        </section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Why people call first</p><h2>Why the business should feel easy to trust</h2></div><p>Keep this section direct and trust-heavy so people in Melbourne, FL get enough confidence to make the call instead of checking another listing.</p></div><div class="section-grid">
+        <article class="proof-card">
+          <span class="proof-kicker">01</span>
+          <h3>Fast help when the job needs real equipment</h3>
+          <p>Show people in Melbourne, FL that the crew can show up with the right equipment and get the hard work handled.</p>
+        </article>
+        
+        <article class="proof-card">
+          <span class="proof-kicker">02</span>
+          <h3>5 stars from 23 Google reviews</h3>
+          <p>Put the rating, contact details, and service area right in front of people so the trust signal lands fast.</p>
+        </article>
+        
+        <article class="proof-card">
+          <span class="proof-kicker">03</span>
+          <h3>Clean work from start to finish</h3>
+          <p>Reassure people that the crew handles the work, the mess, and the cleanup the right way.</p>
+        </article>
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Core services</p><h2>Services people usually call about first</h2></div><p>Start with the jobs people in Melbourne, FL are most likely to call about so the offer is clear in seconds.</p></div><div class="section-grid">
+        <article class="service-card">
+          <span class="service-index">01</span>
+          <h3>Tree removal and trimming</h3>
+          <p>Remove problem trees, trim back overgrowth, and handle the cleanup without leaving a mess behind.</p>
+        </article>
+        
+        <article class="service-card">
+          <span class="service-index">02</span>
+          <h3>Stump grinding and cleanup</h3>
+          <p>Grind down stumps, clear the debris, and open the space back up for use.</p>
+        </article>
+        
+        <article class="service-card">
+          <span class="service-index">03</span>
+          <h3>Storm cleanup and heavy outdoor work</h3>
+          <p>Handle fallen limbs, storm mess, and the heavier outdoor jobs most homeowners do not want to touch themselves.</p>
+        </article>
+        
+        <article class="service-card">
+          <span class="service-index">04</span>
+          <h3>Fast estimates and straightforward scheduling</h3>
+          <p>Call, text, or message to talk through the job, get pricing started, and get on the schedule faster.</p>
+        </article>
+        </div></div></section>
+        <section class="section section--dark"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Customer feedback</p><h2>What people should feel before they call</h2></div><p>Show real rating proof and believable homeowner feedback so 321 Cutz Tree Trimming &amp; Tree Removal feels like a real local operator, not just another listing.</p></div><div class="review-grid">
+        <article class="review-card">
+          <p class="review-source">Verified rating</p>
+          <h3>5 stars from 23 Google reviews</h3>
+          <p>Strong rating proof around Melbourne, FL helps new callers feel better about reaching out right away.</p>
+        </article>
+        
+        <article class="review-card">
+          <p class="review-source">Homeowner review</p>
+          <h3>Fast response and fair pricing</h3>
+          <p>Use a real homeowner line here about quick response, clear pricing, and not having to chase anyone down.</p>
+        </article>
+        
+        <article class="review-card">
+          <p class="review-source">Homeowner review</p>
+          <h3>Clean work and solid follow-through</h3>
+          <p>Use another real line about cleanup, professionalism, and the job being handled right from start to finish.</p>
+        </article>
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Project gallery</p><h2>Recent work, equipment, and finished results</h2></div><p>Show the equipment, finished jobs, and before-and-after moments that make the business feel active, capable, and ready to work.</p></div><div class="gallery-grid">
+        <article class="gallery-card">
+          <div class="placeholder placeholder--gallery">Finished project</div>
+          <h3>Tree Service result shot</h3>
+          <p>Lead with a finished-job photo that immediately shows the kind of work a homeowner would actually call about.</p>
+        </article>
+        
+        <article class="gallery-card">
+          <div class="placeholder placeholder--gallery">Before / after</div>
+          <h3>Before-and-after pair</h3>
+          <p>Show the change clearly so people can see what the crew actually gets done.</p>
+        </article>
+        
+        <article class="gallery-card">
+          <div class="placeholder placeholder--gallery">Equipment shot</div>
+          <h3>Equipment and crew detail</h3>
+          <p>Show the truck, tools, or machine setup so the business feels active and ready to work.</p>
+        </article>
+        
+        <article class="gallery-card">
+          <div class="placeholder placeholder--gallery">Wide property view</div>
+          <h3>Wide property view</h3>
+          <p>Use one wider shot to show the full result instead of only detail closeups.</p>
+        </article>
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">How it works</p><h2>Simple from first call to finished job</h2></div><p>Keep the next steps clear so people know what happens after they call and how fast the job can start moving.</p></div><div class="process-grid">
+        <article class="process-step">
+          <span class="step-number">01</span>
+          <h3>Reach out for the estimate</h3>
+          <p>Call, text, or message with the location and the job details.</p>
+        </article>
+        
+        <article class="process-step">
+          <span class="step-number">02</span>
+          <h3>Talk through the work</h3>
+          <p>Confirm the scope, timing, and what needs to be handled on site.</p>
+        </article>
+        
+        <article class="process-step">
+          <span class="step-number">03</span>
+          <h3>Get on the schedule</h3>
+          <p>Lock in the next step with clear communication and realistic timing.</p>
+        </article>
+        
+        <article class="process-step">
+          <span class="step-number">04</span>
+          <h3>Get the job finished clean</h3>
+          <p>Handle the work, cleanup, and follow-through the way people expect from a local pro.</p>
+        </article>
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">FAQ</p><h2>Questions people usually ask before they reach out.</h2></div><p>A short FAQ helps remove hesitation and keeps the page useful all the way to the final quote CTA.</p></div><div class="section-grid">
+        <article class="faq-card">
+          <h3>Where do you work around Melbourne, FL?</h3>
+          <p>List the core service towns clearly so people know right away whether they are in range.</p>
+        </article>
+        
+        <article class="faq-card">
+          <h3>How fast can I get an estimate?</h3>
+          <p>Tell people the fastest way to reach you and what they should send to move the quote faster.</p>
+        </article>
+        
+        <article class="faq-card">
+          <h3>What tree service jobs do you handle most often?</h3>
+          <p>Name the core jobs people usually call about first so the page feels specific.</p>
+        </article>
+        
+        <article class="faq-card">
+          <h3>Do you handle cleanup too?</h3>
+          <p>Answer the cleanup question directly because it is one of the first things people want to know.</p>
+        </article>
+        </div></div></section>
+        <section class="section"><div class="shell final-cta"><article><p class="eyebrow">Final call to action</p><h2>Get the estimate started today</h2><p>Finish with the strongest contact path, repeat the trust details, and make the next step feel immediate and easy to act on.</p><div class="tag-list"><span>Tree Service</span><span>Lead-gen website + local SEO</span><span>Tree removal and trimming</span><span>Stump grinding and cleanup</span><span>Storm cleanup and heavy outdoor work</span></div><p class="footer-note">Send the job details, the location, and a few photos if you have them so the estimate can move faster.</p></article><aside class="final-panel"><p class="eyebrow">Reach out</p><div class="contact-links"><a class="contact-link" href="tel:3212214747">(321) 221-4747</a><a class="contact-link" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">321cutztreetree.com</a><a class="contact-link" href="https://maps.google.com/?cid=14233159851984450491&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noreferrer">Google Maps listing</a></div><div class="contact-links"><a class="contact-link contact-link--muted" href="https://321cutztreetree.com" target="_blank" rel="noreferrer">Suggested website</a></div><div class="meta-list"><div class="meta-item"><span>Built by</span><strong>NickBlanchardBusiness</strong></div><div class="meta-item"><span>Service area</span><strong>Melbourne, FL</strong></div><div class="meta-item"><span>Markets</span><strong>Melbourne, FL</strong></div><div class="meta-item"><span>Rating</span><strong>5 stars from 23 Google reviews</strong></div><div class="meta-item"><span>Suggested domain</span><strong>321cutztreetree.com</strong></div></div><p class="footer-note">Call, text, or send a message now for a fast estimate and the quickest next step.</p></aside></div></section>
+      </main>
+    </div>
+  </body>
+</html>
