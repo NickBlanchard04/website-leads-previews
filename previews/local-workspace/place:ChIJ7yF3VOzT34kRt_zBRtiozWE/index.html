@@ -21,266 +21,120 @@
         --body-font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
       }
       * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: var(--body-font);
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 22%, transparent) 0, transparent 42%),
-          linear-gradient(180deg, #f8f3ea 0%, var(--canvas) 100%);
-      }
+      body { margin: 0; font-family: var(--body-font); color: var(--text); background: radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 20%, transparent) 0, transparent 36%), linear-gradient(180deg, #f6f2e9 0%, var(--canvas) 100%); }
       a { color: inherit; }
+      p { margin: 0; line-height: 1.7; }
       h1, h2, h3 { margin: 0; font-family: var(--heading-font); letter-spacing: -0.03em; }
       .page { min-height: 100vh; }
       .shell { width: min(1180px, calc(100vw - 2rem)); margin: 0 auto; }
-      .header {
-        position: sticky; top: 0; z-index: 10;
-        backdrop-filter: blur(16px);
-        background: rgba(8, 14, 11, 0.78);
-        border-bottom: 1px solid rgba(239, 233, 223, 0.08);
-      }
-      .header-inner {
-        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-        padding: 1rem 0;
-      }
-      .brand {
-        display: flex; align-items: center; gap: 0.9rem; color: #f6f1e8; text-decoration: none;
-      }
-      .brand-mark {
-        width: 3rem; height: 3rem; border-radius: 0.95rem;
-        display: inline-flex; align-items: center; justify-content: center;
-        background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent) 88%, white 12%) 0%, var(--accent) 48%, color-mix(in srgb, var(--surface) 82%, black 18%) 100%);
-        font-weight: 800; letter-spacing: 0.08em;
-      }
+      .announcement-bar { background: color-mix(in srgb, var(--surface) 92%, black 8%); color: #f5efe6; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .announcement-row { display: flex; flex-wrap: wrap; gap: 0.7rem; padding: 0.75rem 0; }
+      .announcement-pill { display: inline-flex; align-items: center; padding: 0.4rem 0.75rem; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem; font-weight: 600; }
+      .header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(255,251,245,0.86); border-bottom: 1px solid rgba(18,32,24,0.08); }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+      .brand { display: flex; align-items: center; gap: 0.9rem; color: var(--text); text-decoration: none; }
+      .brand-mark { width: 3rem; height: 3rem; border-radius: 0.95rem; display: inline-flex; align-items: center; justify-content: center; background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent) 88%, white 12%) 0%, var(--accent) 48%, color-mix(in srgb, var(--surface) 82%, black 18%) 100%); font-weight: 800; letter-spacing: 0.08em; color: white; }
       .brand-copy small, .brand-copy strong { display: block; }
-      .brand-copy small { letter-spacing: 0.14em; text-transform: uppercase; color: rgba(246, 241, 232, 0.66); font-size: 0.72rem; }
+      .brand-copy small { letter-spacing: 0.14em; text-transform: uppercase; color: rgba(21,35,27,0.58); font-size: 0.72rem; }
       .brand-copy strong { font-size: 1rem; margin-top: 0.18rem; }
       .header-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-      .button {
-        display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
-        padding: 0.9rem 1.2rem; border-radius: 999px; font-weight: 700; border: 1px solid transparent;
-        transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
-      }
+      .button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; padding: 0.9rem 1.2rem; border-radius: 999px; font-weight: 700; border: 1px solid transparent; transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease; }
       .button:hover { transform: translateY(-1px); }
-      .button-solid { background: #f4ead7; color: #17130f; }
-      .button-ghost { background: transparent; color: #f6f1e8; border-color: rgba(246, 241, 232, 0.22); }
-      .hero {
-        position: relative; overflow: hidden;
-        padding: 6.5rem 0 4rem;
-        background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 90%, black 10%) 0%, color-mix(in srgb, var(--surface-alt) 88%, black 12%) 100%);
-      }
-      .hero-grid {
-        display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr); gap: 1.6rem; align-items: center;
-      }
-      .hero-copy, .hero-visual, .section-card {
-        border-radius: 1.6rem; border: 1px solid rgba(241, 234, 224, 0.08);
-        box-shadow: 0 26px 70px rgba(4, 8, 6, 0.24);
-      }
-      .hero-copy {
-        padding: 1.6rem; background: rgba(8, 14, 11, 0.58); color: #f6f1e8;
-      }
-      .eyebrow {
-        margin: 0 0 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; font-weight: 700;
-        color: color-mix(in srgb, var(--accent) 70%, #f6f1e8 30%);
-      }
-      h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 0.95; }
+      .button:focus-visible, .contact-link:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 74%, white 26%); outline-offset: 3px; }
+      .button-solid { background: color-mix(in srgb, var(--accent) 90%, white 10%); color: white; }
+      .button-ghost { background: transparent; color: var(--text); border-color: rgba(21,35,27,0.18); }
+      .hero { padding: 4rem 0 3rem; background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, black 8%) 0%, color-mix(in srgb, var(--surface-alt) 90%, black 10%) 100%); }
+      .hero-grid { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr); gap: 1.5rem; align-items: stretch; }
+      .hero-copy, .hero-panel { border-radius: 1.75rem; box-shadow: 0 26px 70px rgba(4,8,6,0.22); }
+      .hero-copy { padding: 1.9rem; color: #f6f1e8; }
+      .hero-copy p { color: rgba(246,241,232,0.82); }
+      .eyebrow { margin: 0 0 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; font-weight: 700; color: color-mix(in srgb, var(--accent) 70%, #f6f1e8 30%); }
+      h1 { font-size: clamp(2.9rem, 7vw, 5.5rem); line-height: 0.95; }
       h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.02; }
       h3 { font-size: 1.12rem; line-height: 1.18; }
-      p {
-        margin: 0; line-height: 1.7;
-        color: rgba(246, 241, 232, 0.78);
-      }
-      .hero-copy > p + p, .hero-copy > div + p { margin-top: 1rem; }
-      .hero-highlights, .tag-list {
-        display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem;
-      }
-      .hero-highlights span, .tag-list span {
-        padding: 0.42rem 0.72rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700;
-        background: rgba(255, 255, 255, 0.08); color: rgba(246, 241, 232, 0.9);
-      }
+      .hero-lead { margin-top: 1rem; font-size: 1.02rem; max-width: 42rem; }
+      .hero-highlights { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+      .hero-highlights li { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; }
+      .hero-highlights li::before { content: ""; width: 0.75rem; height: 0.75rem; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 6px rgba(255,255,255,0.08); }
       .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.15rem; }
-      .hero-copy > p:last-child {
-        color: rgba(246, 241, 232, 0.62);
-        font-size: 0.93rem;
-      }
-      .hero-visual {
-        padding: 1.4rem; min-height: 410px;
-        display: flex; flex-direction: column; justify-content: flex-end;
-        color: #f6f1e8;
-        background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 45%),
-          linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, black 8%) 0%, color-mix(in srgb, var(--surface-alt) 92%, black 8%) 100%);
-      }
-      .hero-visual .pill {
-        display: inline-flex; width: fit-content; padding: 0.42rem 0.74rem; border-radius: 999px;
-        font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-        background: rgba(255,255,255,0.1);
-      }
-      .hero-visual strong { display: block; margin-top: 1rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 0.96; }
-      .hero-visual p { margin-top: 0.8rem; max-width: 28rem; }
-      .hero-visual .stat-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.75rem;
-        margin-top: 1.2rem;
-      }
-      .stat-chip {
-        padding: 0.9rem 0.95rem;
-        border-radius: 1rem;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.1);
-      }
-      .stat-chip span,
-      .meta-item span,
-      .process-step span {
-        display: block;
-        font-size: 0.74rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-      .stat-chip strong,
-      .meta-item strong {
-        display: block;
-        margin-top: 0.28rem;
-        font-size: 0.98rem;
-      }
+      .hero-note { margin-top: 1rem; color: rgba(246,241,232,0.62); font-size: 0.93rem; }
+      .hero-panel { padding: 1.5rem; background: rgba(255,250,243,0.98); border: 1px solid rgba(20,32,24,0.12); display: flex; flex-direction: column; gap: 1rem; }
+      .hero-panel .eyebrow { color: color-mix(in srgb, var(--text) 62%, var(--accent) 38%); margin-bottom: 0; }
+      .hero-panel p { color: rgba(19,32,24,0.78); }
+      .panel-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+      .stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+      .stat-chip { padding: 0.9rem 0.95rem; border-radius: 1rem; background: rgba(16,32,25,0.05); border: 1px solid rgba(16,32,25,0.08); }
+      .stat-chip span, .meta-item span, .process-step span { display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+      .stat-chip strong, .meta-item strong { display: block; margin-top: 0.28rem; font-size: 0.98rem; }
       .section { padding: 3rem 0; }
-      .section-heading {
-        display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(240px, 0.8fr); gap: 1.2rem; align-items: end;
-        margin-bottom: 1.2rem;
-      }
-      .section-heading p:last-child { color: rgba(19, 32, 24, 0.7); }
-      .section-heading .eyebrow, .card-copy .eyebrow { color: color-mix(in srgb, var(--text) 72%, var(--accent) 28%); }
-      .section-grid {
-        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;
-      }
-      .funnel-grid {
-        display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
-      }
-      .funnel-card {
-        padding: 1.15rem;
-        border-radius: 1.35rem;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.78);
-      }
-      .funnel-card span {
-        display: inline-flex;
-        margin-bottom: 0.7rem;
-        font-size: 0.74rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: color-mix(in srgb, var(--text) 64%, var(--accent) 36%);
-      }
-      .funnel-card p {
-        color: rgba(19, 32, 24, 0.72);
-        margin-top: 0.55rem;
-      }
-      .process-grid {
-        display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
-      }
-      .process-step {
-        padding: 1.2rem;
-        border-radius: 1.35rem;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.78);
-      }
-      .process-step h3 {
-        margin-top: 0.75rem;
-      }
-      .process-step p {
-        color: rgba(19, 32, 24, 0.74);
-        margin-top: 0.5rem;
-      }
+      .section--dark { background: color-mix(in srgb, var(--surface) 94%, black 6%); color: #f6f1e8; }
+      .section--dark p, .section--dark .section-heading p:last-child, .section--dark .review-card p { color: rgba(246,241,232,0.78); }
+      .section--dark .eyebrow { color: color-mix(in srgb, var(--accent) 72%, #f6f1e8 28%); }
+      .section-heading { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(240px, 0.75fr); gap: 1.2rem; align-items: end; margin-bottom: 1.2rem; }
+      .section-heading p:last-child { color: rgba(19,32,24,0.7); }
+      .section-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+      .process-step { padding: 1.2rem; border-radius: 1.35rem; border: 1px solid color-mix(in srgb, var(--line) 85%, transparent 15%); background: rgba(255,255,255,0.82); }
+      .process-step h3 { margin-top: 0.75rem; }
+      .process-step p { margin-top: 0.5rem; color: rgba(19,32,24,0.74); }
       .gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-      .service-card,
-      .proof-card,
-      .gallery-card,
-      .contact-copy,
-      .contact-panel {
-        padding: 1.2rem; background: rgba(255,255,255,0.82); border: 1px solid var(--line);
-        border-radius: 1.5rem;
-      }
-      .service-card p,
-      .proof-card p,
-      .gallery-card p,
-      .contact-copy p,
-      .contact-panel p {
-        color: rgba(19, 32, 24, 0.74);
-      }
-      .service-card h3,
-      .proof-card h3,
-      .gallery-card h3 {
-        margin-bottom: 0.6rem;
-      }
-      .placeholder {
-        min-height: 210px; border-radius: 1.2rem; display: flex; align-items: flex-end; padding: 1rem;
-        background:
-          linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 48%),
-          linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, black 8%) 0%, color-mix(in srgb, var(--surface-alt) 92%, black 8%) 100%);
-        color: rgba(246, 241, 232, 0.94);
-        margin-bottom: 1rem;
-      }
+      .gallery-card:first-child { grid-column: span 2; }
+      .service-card, .proof-card, .gallery-card, .faq-card { padding: 1.2rem; background: rgba(255,255,255,0.82); border: 1px solid var(--line); border-radius: 1.5rem; }
+      .service-card p, .proof-card p, .gallery-card p, .faq-card p { color: rgba(19,32,24,0.74); }
+      .service-card h3, .proof-card h3, .gallery-card h3, .faq-card h3 { margin-bottom: 0.6rem; }
+      .service-index, .proof-kicker { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; margin-bottom: 0.9rem; border-radius: 999px; background: rgba(16,32,25,0.06); color: color-mix(in srgb, var(--text) 60%, var(--accent) 40%); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+      .proof-card { background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(246,241,233,0.9) 100%); }
+      .placeholder { min-height: 210px; border-radius: 1.2rem; display: flex; align-items: flex-end; padding: 1rem; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 48%), linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, black 8%) 0%, color-mix(in srgb, var(--surface-alt) 92%, black 8%) 100%); color: rgba(246,241,232,0.94); margin-bottom: 1rem; }
       .placeholder--gallery { min-height: 240px; }
-      .contact {
-        display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 0.84fr); gap: 1rem;
-      }
-      .contact-copy, .contact-panel {
-        padding: 1.3rem; border-radius: 1.6rem; border: 1px solid var(--line); background: rgba(255,255,255,0.84);
-      }
-      .contact-links {
-        display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem;
-      }
-      .contact-link {
-        text-decoration: none; padding: 0.75rem 0.92rem; border-radius: 999px;
-        background: rgba(16, 32, 25, 0.06); border: 1px solid rgba(16, 32, 25, 0.08);
-      }
-      .contact-link--muted { background: rgba(16, 32, 25, 0.035); }
+      .review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .review-card { padding: 1.35rem; border-radius: 1.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); }
+      .review-source { margin-bottom: 0.7rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--accent) 72%, #f6f1e8 28%); }
+      .tag-list, .contact-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
+      .tag-list span { padding: 0.42rem 0.74rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: rgba(16,32,25,0.06); }
+      .contact-link { text-decoration: none; padding: 0.75rem 0.92rem; border-radius: 999px; background: rgba(16,32,25,0.06); border: 1px solid rgba(16,32,25,0.08); }
+      .contact-link--muted { background: rgba(16,32,25,0.035); }
+      .final-cta { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr); gap: 1rem; padding: 1.45rem; border-radius: 1.9rem; background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, black 8%) 0%, color-mix(in srgb, var(--surface-alt) 90%, black 10%) 100%); color: #f6f1e8; box-shadow: 0 24px 60px rgba(4,8,6,0.2); }
+      .final-cta p { color: rgba(246,241,232,0.78); }
+      .final-cta .eyebrow { color: color-mix(in srgb, var(--accent) 72%, #f6f1e8 28%); }
+      .final-panel { padding: 1.2rem; border-radius: 1.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); }
+      .final-panel .contact-link { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.12); color: #f6f1e8; }
+      .final-panel .contact-link--muted { background: rgba(255,255,255,0.05); }
       .meta-list { display: grid; gap: 0.85rem; margin-top: 1rem; }
       .meta-item span { color: color-mix(in srgb, var(--text) 64%, var(--accent) 36%); }
-      .footer-note { margin-top: 1.1rem; font-size: 0.92rem; color: rgba(19, 32, 24, 0.62); }
-      @media (max-width: 920px) {
-        .hero-grid, .hero-visual .stat-grid, .section-heading, .section-grid, .funnel-grid, .process-grid, .gallery-grid, .contact { grid-template-columns: 1fr; }
-        .hero { padding-top: 6rem; }
-      }
+      .final-panel .meta-item span { color: rgba(246,241,232,0.68); }
+      .final-panel .meta-item strong { color: #f6f1e8; }
+      .footer-note { margin-top: 1.1rem; font-size: 0.92rem; color: rgba(19,32,24,0.62); }
+      @media (max-width: 920px) { .hero-grid, .section-heading, .section-grid, .process-grid, .gallery-grid, .review-grid, .final-cta, .stat-grid { grid-template-columns: 1fr; } .gallery-card:first-child { grid-column: span 1; } }
     </style>
   </head>
   <body>
     <div class="page">
+      <div class="announcement-bar"><div class="shell announcement-row"><span class="announcement-pill">Free estimate ready</span><span class="announcement-pill">4.3 stars from 6 Google reviews</span><span class="announcement-pill">Serving Queensbury, NY</span><span class="announcement-pill">Lawn Care</span></div></div>
       <header class="header">
         <div class="shell header-inner">
           <a class="brand" href="#top">
             <span class="brand-mark">CC</span>
-            <span class="brand-copy">
-              <small>Queensbury, NY</small>
-              <strong>Clean Cut Landscape And Property Maintenance</strong>
-            </span>
+            <span class="brand-copy"><small>Queensbury, NY</small><strong>Clean Cut Landscape And Property Maintenance</strong></span>
           </a>
-          <div class="header-actions">
-            <a class="button button-solid" href="tel:5182274671">(518) 227-4671</a>
-            <a class="button button-ghost" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a>
-          </div>
+          <div class="header-actions"><a class="button button-solid" href="tel:5182274671">(518) 227-4671</a><a class="button button-ghost" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a></div>
         </div>
       </header>
       <main>
         <section class="hero" id="top">
           <div class="shell hero-grid">
-            <article class="hero-copy">
+            <article class="hero-copy" aria-labelledby="hero-title">
               <p class="eyebrow">Queensbury, NY lawn care</p>
-              <h1>Clean Cut Landscape And Property Maintenance</h1>
-              <p>Clean Cut Landscape And Property Maintenance can look more established online by leading with lawn care work, clear service-area language, and a direct contact path for Queensbury, NY. No website listed in Google Places.</p>
-              <div class="hero-highlights"><span>Lawn Care</span><span>Serving Queensbury, NY</span><span>4.3 stars from 6 Google reviews</span><span>New Website and local seo</span></div>
-              <div class="hero-actions">
-                <a class="button button-solid" href="tel:5182274671">(518) 227-4671</a>
-                <a class="button button-ghost" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a>
-              </div>
-              <p>Preview concept prepared from public listing details and ready for real photos, reviews, and final brand styling.</p>
+              <h1 id="hero-title">Clean Cut Landscape And Property Maintenance</h1>
+              <p class="hero-lead">Clean Cut Landscape And Property Maintenance should feel like an established local lawn care company with a clear estimate offer, direct contact details, and proof that the crew is active around Queensbury, NY. No website listed in Google Places.</p>
+              <ul class="hero-highlights"><li>Lawn Care</li><li>Serving Queensbury, NY</li><li>4.3 stars from 6 Google reviews</li><li>New Website and local seo</li></ul>
+              <div class="hero-actions"><a class="button button-solid" href="tel:5182274671">(518) 227-4671</a><a class="button button-ghost" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a></div>
+              <p class="hero-note">Fast estimates, straightforward communication, and proof that the crew is active locally should all show up before the visitor ever has to scroll far.</p>
             </article>
-            <aside class="hero-visual">
-              <span class="pill">Local service preview</span>
-              <strong>A stronger local homepage built to earn the call</strong>
-              <p>Use large-format landscape imagery, warm earth neutrals, deep green surfaces, and restrained typography so the preview feels premium, local, and outdoors-first.</p>
+            <aside class="hero-panel" aria-label="Estimate details">
+              <p class="eyebrow">Fast estimate</p>
+              <h2>Built like the kind of local service homepage people trust quickly</h2>
+              <p>Put the phone number, service area, review proof, and estimate offer right next to the hero so visitors from Queensbury, NY know how to reach out immediately.</p>
+              <div class="panel-actions"><a class="button button-solid" href="tel:5182274671">(518) 227-4671</a><a class="button button-ghost" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a></div>
               <div class="stat-grid">
         <div class="stat-chip">
           <span>Service area</span>
@@ -288,283 +142,156 @@
         </div>
         
         <div class="stat-chip">
-          <span>Google proof</span>
+          <span>Review proof</span>
           <strong>4.3 stars from 6 Google reviews</strong>
         </div>
         
         <div class="stat-chip">
-          <span>Primary next step</span>
-          <strong>Call, email, or request a quote</strong>
+          <span>Best next step</span>
+          <strong>Call now or request a fast estimate</strong>
         </div>
         </div>
+              <div class="meta-list"><div class="meta-item"><span>Call</span><strong>(518) 227-4671</strong></div><div class="meta-item"><span>Service area</span><strong>Queensbury, NY</strong></div><div class="meta-item"><span>Review proof</span><strong>4.3 stars from 6 Google reviews</strong></div></div>
+              <div class="contact-links"><a class="contact-link" href="tel:5182274671">(518) 227-4671</a><a class="contact-link" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">cleanqueensbury.com</a><a class="contact-link" href="https://maps.google.com/?cid=7047474638758214839&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noreferrer">Google Maps listing</a></div>
+              <div class="contact-links"><a class="contact-link contact-link--muted" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a></div>
             </aside>
           </div>
         </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Conversion path</p>
-                <h2>Turn Queensbury, NY visitors into Clean Cut Landscape And Property Maintenance leads with a clear outdoor-service funnel.</h2>
-              </div>
-              <p>The page should move from local awareness into trust, clarify the work, and repeat the estimate path after every proof-heavy moment.</p>
-            </div>
-            <div class="funnel-grid">
-        <article class="funnel-card">
-          <span>01</span>
-          <h3>Local first impression</h3>
-          <p>Lead with lawn care work, the market name, and one immediate CTA.</p>
-        </article>
-        
-        <article class="funnel-card">
-          <span>02</span>
-          <h3>Clarify the offer</h3>
-          <p>Group services into recognizable buckets instead of dumping a long checklist.</p>
-        </article>
-        
-        <article class="funnel-card">
-          <span>03</span>
-          <h3>Earn trust visually</h3>
-          <p>Layer in reviews, proof cards, and image slots that feel like real property work.</p>
-        </article>
-        
-        <article class="funnel-card">
-          <span>04</span>
-          <h3>Convert before the footer</h3>
-          <p>Repeat the call, email, or estimate action after proof and again in the final section.</p>
-        </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Lead services</p>
-                <h2>What Clean Cut Landscape And Property Maintenance should lead with</h2>
-              </div>
-              <p>Use grouped, revenue-driving service categories so the page feels organized, capable, and easy to scan at a glance.</p>
-            </div>
-            <div class="section-grid">
-        <article class="service-card">
-          <h3>Lawn care and weekly upkeep</h3>
-          <p>Position the business around the recurring maintenance work that keeps a property looking cared for week after week.</p>
-        </article>
-        
-        <article class="service-card">
-          <h3>Landscaping and curb appeal</h3>
-          <p>Show planting, cleanup, edging, and visual detail work as the first layer of the offer.</p>
-        </article>
-        
-        <article class="service-card">
-          <h3>Fast local quote flow</h3>
-          <p>Keep the contact path simple with a direct phone or email CTA, a service-area summary, and a clear next step.</p>
-        </article>
-        
-        <article class="service-card">
-          <h3>Owner-led local service</h3>
-          <p>Present the business as a nearby operator with direct communication instead of a faceless lead-gen shell.</p>
-        </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Visitor flow</p>
-                <h2>A homepage path that moves people toward contact</h2>
-              </div>
-              <p>Keep the journey short: explain the offer, show the work, reinforce trust, and end on an obvious next step.</p>
-            </div>
-            <div class="process-grid">
-        <article class="process-step">
-          <span class="step-number">01</span>
-          <h3>Lead with the core service</h3>
-          <p>Keep lawn care and the local service area visible in the first viewport.</p>
-        </article>
-        
-        <article class="process-step">
-          <span class="step-number">02</span>
-          <h3>Show a few service blocks</h3>
-          <p>Use the best-fitting recurring services from the CSV row rather than trying to say everything at once.</p>
-        </article>
-        
-        <article class="process-step">
-          <span class="step-number">03</span>
-          <h3>Layer in proof and trust</h3>
-          <p>Drop in real project photos, review snippets, and a short owner-led trust section.</p>
-        </article>
-        
-        <article class="process-step">
-          <span class="step-number">04</span>
-          <h3>Close with direct contact</h3>
-          <p>Repeat the main CTA with phone, email, social, or map links so the pitch site feels usable immediately.</p>
-        </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Trust builders</p>
-                <h2>The proof that should sit directly under the hero</h2>
-              </div>
-              <p>Keep this section image-led and trust-heavy so the visitor gets local confidence before they reach the longer service details.</p>
-            </div>
-            <div class="section-grid">
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Why call this business first</p><h2>Why a homeowner should feel comfortable calling</h2></div><p>Keep this section specific and trust-heavy so the visitor gets local confidence before comparing another listing.</p></div><div class="section-grid">
         <article class="proof-card">
-          <div class="placeholder">Proof card slot</div>
-          <h3>Front-of-property lawn care work</h3>
-          <p>Show the kind of results homeowners notice first in Queensbury, NY, especially the work that improves curb appeal right away.</p>
+          <span class="proof-kicker">01</span>
+          <h3>Work that looks noticeably better when the job is done</h3>
+          <p>Lead with the kind of finished results homeowners in Queensbury, NY notice right away, especially the work that improves curb appeal fast.</p>
         </article>
         
         <article class="proof-card">
-          <div class="placeholder">Proof card slot</div>
-          <h3>Neighborhood trust that feels earned</h3>
+          <span class="proof-kicker">02</span>
+          <h3>Local trust that feels earned</h3>
           <p>4.3 stars from 6 Google reviews</p>
         </article>
         
         <article class="proof-card">
-          <div class="placeholder">Proof card slot</div>
-          <h3>One premium upgrade moment</h3>
-          <p>Reserve one proof block for the higher-ticket or more specialized work that raises perceived value without crowding the core offer.</p>
+          <span class="proof-kicker">03</span>
+          <h3>The right equipment and follow-through</h3>
+          <p>Show that the crew can handle the real work, clean up well, and leave the property looking finished rather than halfway done.</p>
         </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Reviews and trust</p>
-                <h2>What should make Clean Cut Landscape And Property Maintenance feel easy to trust</h2>
-              </div>
-              <p>Use one verified rating signal and two reserved testimonial moments so the page feels credible without inventing social proof.</p>
-            </div>
-            <div class="section-grid">
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Core services</p><h2>Services homeowners usually look for first</h2></div><p>Lead with the work people actually search for first so the page feels capable, practical, and ready to help on a real job.</p></div><div class="section-grid">
         <article class="service-card">
-          <p class="eyebrow">Google proof</p>
+          <span class="service-index">01</span>
+          <h3>Lawn care and weekly upkeep</h3>
+          <p>Keep mowing, edging, trimming, and routine cleanup handled so the property stays sharp week after week.</p>
+        </article>
+        
+        <article class="service-card">
+          <span class="service-index">02</span>
+          <h3>Landscaping and curb appeal</h3>
+          <p>Refresh the parts of the property people notice first with cleanup, planting, edging, mulch, and curb-appeal work.</p>
+        </article>
+        
+        <article class="service-card">
+          <span class="service-index">03</span>
+          <h3>Fast estimates and dependable scheduling</h3>
+          <p>Make it easy to ask for pricing, confirm scope, and know what happens next without chasing down a response.</p>
+        </article>
+        
+        <article class="service-card">
+          <span class="service-index">04</span>
+          <h3>Owner-led local service</h3>
+          <p>Show direct communication, cleaner follow-through, and a nearby crew that feels accountable from start to finish.</p>
+        </article>
+        </div></div></section>
+        <section class="section section--dark"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Customer feedback</p><h2>What local homeowners should feel before they call</h2></div><p>Use real rating proof and believable homeowner quotes so Clean Cut Landscape And Property Maintenance feels like a trusted local operator, not another generic listing.</p></div><div class="review-grid">
+        <article class="review-card">
+          <p class="review-source">Google rating</p>
           <h3>4.3 stars from 6 Google reviews</h3>
-          <p>Use the best available review proof for Queensbury, NY so the trust signal lands before the final CTA.</p>
+          <p>Feature the strongest available review proof from Queensbury, NY so the trust signal lands before the visitor decides whether to call.</p>
         </article>
         
-        <article class="service-card">
-          <p class="eyebrow">Homeowner quote slot</p>
-          <h3>Cleanup or workmanship quote</h3>
-          <p>Reserve this slot for a homeowner line about quality, cleanup, or visible finished results.</p>
+        <article class="review-card">
+          <p class="review-source">Homeowner quote</p>
+          <h3>Professional, neat, and easy to work with</h3>
+          <p>Use this slot for a homeowner line about cleanup, finish quality, or the job being done right the first time.</p>
         </article>
         
-        <article class="service-card">
-          <p class="eyebrow">Homeowner quote slot</p>
-          <h3>Communication or reliability quote</h3>
-          <p>Use another real line about responsiveness, punctuality, or the crew being easy to work with.</p>
+        <article class="review-card">
+          <p class="review-source">Homeowner quote</p>
+          <h3>Responsive from estimate to finished job</h3>
+          <p>Use another real line about communication, fair pricing, or the crew being easy to work with from start to finish.</p>
         </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Photo plan</p>
-                <h2>The image moments that will sell this fastest</h2>
-              </div>
-              <p>Favor finished outcomes, before-and-after evidence, and crew-in-action moments so the page feels visual and specific instead of generic.</p>
-            </div>
-            <div class="gallery-grid">
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Project gallery</p><h2>Our equipment and work ready for the next project</h2></div><p>Use real finished-job photos, before-and-after proof, and equipment shots so the visitor feels like the crew is active, equipped, and ready to work.</p></div><div class="gallery-grid">
         <article class="gallery-card">
-          <div class="placeholder placeholder--gallery">Project photo slot</div>
+          <div class="placeholder placeholder--gallery">Finished project</div>
           <h3>Lawn Care result shot</h3>
-          <p>Drop in a strong finished project image here.</p>
+          <p>Lead with a finished-job photo that immediately shows the kind of work a homeowner would actually call about.</p>
         </article>
         
         <article class="gallery-card">
           <div class="placeholder placeholder--gallery">Before / after</div>
           <h3>Before-and-after pair</h3>
-          <p>Use this slot for the transformation image that sells the difference quickly.</p>
+          <p>Show the visual change clearly so the visitor understands the difference the crew makes.</p>
         </article>
         
         <article class="gallery-card">
-          <div class="placeholder placeholder--gallery">Action shot</div>
-          <h3>Crew-in-action detail</h3>
-          <p>Show equipment, process, or team craftsmanship to make the service feel real.</p>
+          <div class="placeholder placeholder--gallery">Equipment shot</div>
+          <h3>Equipment and crew detail</h3>
+          <p>Include the truck, tools, or crew setup so the company feels active, real, and ready to work.</p>
         </article>
         
         <article class="gallery-card">
-          <div class="placeholder placeholder--gallery">Wide shot</div>
+          <div class="placeholder placeholder--gallery">Wide property view</div>
           <h3>Wide property view</h3>
-          <p>A wider frame helps visitors understand the scale and finish of the work.</p>
+          <p>A wider property shot helps sell scale, neatness, and finish quality in one glance.</p>
         </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">FAQ</p>
-                <h2>Use a short FAQ to remove hesitation before the final call to action.</h2>
-              </div>
-              <p>A few grounded answers make the site feel usable and complete, especially for local service businesses where visitors want clarity fast.</p>
-            </div>
-            <div class="section-grid">
-        <article class="service-card">
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">How it works</p><h2>Simple from first call to finished job</h2></div><p>Keep the process clear and low-friction so the site feels like a real local business, not just a brochure.</p></div><div class="process-grid">
+        <article class="process-step">
+          <span class="step-number">01</span>
+          <h3>Request a quote</h3>
+          <p>Make the first step obvious with a visible phone number, email, or estimate button.</p>
+        </article>
+        
+        <article class="process-step">
+          <span class="step-number">02</span>
+          <h3>Confirm the scope</h3>
+          <p>Use the service list and local details to show what kinds of jobs the crew is a fit for.</p>
+        </article>
+        
+        <article class="process-step">
+          <span class="step-number">03</span>
+          <h3>Schedule the work</h3>
+          <p>Reinforce reliability with proof, reviews, and straightforward expectations.</p>
+        </article>
+        
+        <article class="process-step">
+          <span class="step-number">04</span>
+          <h3>Finish clean and follow through</h3>
+          <p>Close with the kind of trust language homeowners want before they hand a job over.</p>
+        </article>
+        </div></div></section>
+        <section class="section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">FAQ</p><h2>Questions homeowners usually ask before they reach out.</h2></div><p>A short FAQ makes the page feel more complete and helps remove hesitation before the final quote CTA.</p></div><div class="section-grid">
+        <article class="faq-card">
           <h3>Where do you work around Queensbury, NY?</h3>
           <p>Use this answer to list the main towns and remove service-area uncertainty quickly.</p>
         </article>
         
-        <article class="service-card">
+        <article class="faq-card">
           <h3>How fast can someone get an estimate?</h3>
-          <p>Set the follow-up expectation clearly so the CTA feels low-friction.</p>
+          <p>Set the follow-up expectation clearly so the quote request feels low-friction.</p>
         </article>
         
-        <article class="service-card">
+        <article class="faq-card">
           <h3>What lawn care work should lead the site?</h3>
-          <p>Highlight the highest-value recurring or most recognizable services first.</p>
+          <p>Highlight the most recognizable and most requested services first.</p>
         </article>
         
-        <article class="service-card">
+        <article class="faq-card">
           <h3>Will the crew handle cleanup too?</h3>
-          <p>Use this slot to answer one of the most common outdoor-service objections.</p>
+          <p>Answer one of the most common outdoor-service objections directly and clearly.</p>
         </article>
-        </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="shell contact">
-            <article class="contact-copy">
-              <p class="eyebrow">Get in touch</p>
-              <h2>Make it easy to reach Clean Cut Landscape And Property Maintenance</h2>
-              <p>The final section should restate the strongest CTA, repeat the best contact links, and make the estimate or booking step feel frictionless.</p>
-              <div class="tag-list"><span>Lawn Care</span><span>New Website + local SEO</span><span>Lawn care and weekly upkeep</span><span>Landscaping and curb appeal</span><span>Fast local quote flow</span></div>
-              <div class="contact-links"><a class="contact-link" href="tel:5182274671">(518) 227-4671</a><a class="contact-link" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">cleanqueensbury.com</a><a class="contact-link" href="https://maps.google.com/?cid=7047474638758214839&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noreferrer">Google Maps listing</a></div>
-              <div class="contact-links"><a class="contact-link contact-link--muted" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a><a class="contact-link contact-link--muted" href="https://maps.google.com/?cid=7047474638758214839&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noreferrer">Google Maps listing</a></div>
-              <p class="footer-note">If this moves beyond preview mode, wire the contact block to the real form, booking, or outreach workflow.</p>
-            </article>
-            <aside class="contact-panel">
-              <p class="eyebrow">Lead details</p>
-              <div class="meta-list">
-                <div class="meta-item"><span>Built by</span><strong>Local Workspace</strong></div>
-                <div class="meta-item"><span>Service area</span><strong>Queensbury, NY</strong></div>
-                <div class="meta-item"><span>Markets</span><strong>Queensbury, NY</strong></div>
-                <div class="meta-item"><span>Rating</span><strong>4.3 stars from 6 Google reviews</strong></div>
-                
-                <div class="meta-item"><span>Suggested domain</span><strong>cleanqueensbury.com</strong></div>
-              </div>
-              <p class="footer-note">Use a same-day or next-business-day response promise once the owner confirms the real follow-up process.</p>
-            </aside>
-          </div>
-        </section>
+        </div></div></section>
+        <section class="section"><div class="shell final-cta"><article><p class="eyebrow">Final call to action</p><h2>Talk to the crew and get the quote started</h2><p>Close with one strong estimate-focused call to action, restate the best contact details, and make the next step feel immediate.</p><div class="tag-list"><span>Lawn Care</span><span>New Website + local SEO</span><span>Lawn care and weekly upkeep</span><span>Landscaping and curb appeal</span><span>Fast estimates and dependable scheduling</span></div><p class="footer-note">If this moves beyond preview mode, wire the contact block to the real form, booking, or outreach workflow.</p></article><aside class="final-panel"><p class="eyebrow">Reach out</p><div class="contact-links"><a class="contact-link" href="tel:5182274671">(518) 227-4671</a><a class="contact-link" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">cleanqueensbury.com</a><a class="contact-link" href="https://maps.google.com/?cid=7047474638758214839&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noreferrer">Google Maps listing</a></div><div class="contact-links"><a class="contact-link contact-link--muted" href="https://cleanqueensbury.com" target="_blank" rel="noreferrer">Suggested website</a></div><div class="meta-list"><div class="meta-item"><span>Built by</span><strong>Local Workspace</strong></div><div class="meta-item"><span>Service area</span><strong>Queensbury, NY</strong></div><div class="meta-item"><span>Markets</span><strong>Queensbury, NY</strong></div><div class="meta-item"><span>Rating</span><strong>4.3 stars from 6 Google reviews</strong></div><div class="meta-item"><span>Suggested domain</span><strong>cleanqueensbury.com</strong></div></div><p class="footer-note">Call, text, or email for a fast estimate once the real follow-up workflow is confirmed.</p></aside></div></section>
       </main>
     </div>
   </body>
